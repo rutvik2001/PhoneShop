@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using ClassLibrary;
 using System.Web.UI.WebControls;
 
 public partial class _1_DataEntry : System.Web.UI.Page
@@ -11,4 +12,16 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
 
     }
+
+    protected void btnOK_Click(object sender, EventArgs e)
+    {
+        clsComplaint AComplaint = new clsComplaint();
+        AComplaint.ComplaintsID = txtComplaintsID.Text;
+        Session["AComplaint"] = AComplaint;
+        Response.Redirect("ComplaintsViewer.aspx");
+    }
+
+
+
+   
 }
