@@ -16,17 +16,17 @@ public partial class _1_DataEntry : System.Web.UI.Page
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsComplaint AComplaint = new clsComplaint();
-        AComplaint.ComplaintsID = txtComplaintsID.Text;
+        AComplaint.ComplaintsID = Convert.ToInt32(txtComplaintsID.Text) ;
  
-        AComplaint.CustomerID = txtCustomerID.Text;
+        AComplaint.CustomerID = Convert.ToInt32(txtCustomerID.Text);
  
         AComplaint.CustomerFullName = txtCustomerFullName.Text;
 
-        AComplaint.ComplaintDate = txtComplaintDate.Text;
+        AComplaint.ComplaintDate = Convert.ToDateTime(txtComplaintDate.Text);
 
         AComplaint.ComplaintDescription = txtComplaintDescription.Text;
    
-        AComplaint.IssueSolved = chkIssueSolved.Text;
+        AComplaint.IssueSolved = Convert.ToBoolean(chkIssueSolved.Text);
         Session["AComplaint"] = AComplaint;
         Response.Redirect("ComplaintsViewer.aspx");
     }

@@ -5,25 +5,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Testing2
 {
     [TestClass]
-    public class tstComplaints
+    public class tstComplaint
     {
         [TestMethod]
         public void InstanceOK()
         {
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             Assert.IsNotNull(AComplaint);
         }
         [TestMethod]
         public void ActivePropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             Boolean issueSolved = true;
             //assign the data to the property
-            AComplaint.Active = issueSolved;
+            AComplaint.IssueSolved = issueSolved;
             //test to see that the two values are the same
-            Assert.AreEqual(AComplaint.Active, issueSolved);
+            Assert.AreEqual(AComplaint.IssueSolved, issueSolved);
 
 
 
@@ -32,20 +32,20 @@ namespace Testing2
         public void ComplaintDatePropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
-            AComplaint.DateAdded = TestData;
+            AComplaint.ComplaintDate = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AComplaint.DateAdded, TestData);
+            Assert.AreEqual(AComplaint.ComplaintDate, TestData);
 
         }
         [TestMethod]
         public void AddressNoPropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             string TestData = "Rutvik";
             //assign the data to the property
@@ -57,7 +57,7 @@ namespace Testing2
         public void CustomerIDPropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign the data to the property
@@ -69,7 +69,7 @@ namespace Testing2
         public void ComplaintsIDPropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             Int32 TestData = 2;
             //assign the data to the property
@@ -81,7 +81,7 @@ namespace Testing2
         public void ComplaintDescriptionPropertyOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //create some test data to assign to the property
             string TestData = "Phone screen damaged during shipping";
             //assign the data to the property
@@ -93,7 +93,7 @@ namespace Testing2
         public void FindMethodOK()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
@@ -107,7 +107,7 @@ namespace Testing2
         public void TestComplaintIDFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -128,7 +128,7 @@ namespace Testing2
         public void TestCustomerIDFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -149,7 +149,7 @@ namespace Testing2
         public void TestCustomerFullNameFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -170,7 +170,7 @@ namespace Testing2
         public void TestComplaintDescriptionFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -191,7 +191,7 @@ namespace Testing2
         public void TestComplaintDateFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -201,7 +201,7 @@ namespace Testing2
             //invoke the method
             Found = AComplaint.Find(ComplaintDate);
             //check the address no
-            if (AComplaint.DateAdded != Convert.ToDateTime("16/09/2015"))
+            if (AComplaint.ComplaintDate != Convert.ToDateTime("16/09/2015"))
             {
                 OK = false;
             }
@@ -212,7 +212,7 @@ namespace Testing2
         public void TestActiveFound()
         {
             //create an instance of the class we want to create
-            clsComplaints AComplaint = new clsComplaints();
+            clsComplaint AComplaint = new clsComplaint();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is OK (assume it is)
@@ -222,7 +222,7 @@ namespace Testing2
             //invoke the method
             Found = AComplaint.Find(IssueSolved);
             //check the property
-            if (AComplaint.Active != true)
+            if (AComplaint.IssueSolved != true)
             {
                 OK = false;
             }
