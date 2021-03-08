@@ -13,5 +13,12 @@ public partial class _1Viewer : System.Web.UI.Page
         clsComplaint AComplaint = new clsComplaint();
         AComplaint = (clsComplaint) Session["AComplaint"];
         Response.Write(AComplaint.ComplaintsID);
+
+    
+        Response.Write(AComplaint.CustomerID);
+        Response.Write(AComplaint.CustomerFullName);
+        Response.Write(AComplaint.ComplaintDate);
+        Response.Write(AComplaint.ComplaintDescription);
+        Response.Write(AComplaint.IssueSolved);
     }
 }

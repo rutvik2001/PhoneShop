@@ -17,6 +17,16 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         clsComplaint AComplaint = new clsComplaint();
         AComplaint.ComplaintsID = txtComplaintsID.Text;
+ 
+        AComplaint.CustomerID = txtCustomerID.Text;
+ 
+        AComplaint.CustomerFullName = txtCustomerFullName.Text;
+
+        AComplaint.ComplaintDate = txtComplaintDate.Text;
+
+        AComplaint.ComplaintDescription = txtComplaintDescription.Text;
+   
+        AComplaint.IssueSolved = chkIssueSolved.Text;
         Session["AComplaint"] = AComplaint;
         Response.Redirect("ComplaintsViewer.aspx");
     }
